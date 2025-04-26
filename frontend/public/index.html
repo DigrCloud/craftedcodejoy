@@ -1,84 +1,464 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>craftedcodejoy | AI-Powered Career & Business Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">crafted<span class="gradient-text">code</span>joy</a>
             </div>
-        </a>
-    </body>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+                <button class="contact-btn">Contact Us</button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Digital Experience with AI-Powered Solutions</h1>
+                <p>Transform your career and business with cutting-edge strategies designed for the future of technology</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Get a Demo</button>
+                    <button class="btn btn-outline" id="referral-btn">Enter Referral Code</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card" data-service="career-coaching">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Career Coaching</h3>
+                    <p>Personalized guidance to navigate your tech career path successfully.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card" data-service="job-search">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Job Search Strategies</h3>
+                    <p>Proven techniques to stand out in the competitive tech job market.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card" data-service="personal-branding">
+                    <div class="service-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Personal Branding Guidance</h3>
+                    <p>Develop a compelling professional identity that gets you noticed.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card" data-service="networking">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking Strategies</h3>
+                    <p>Build meaningful professional connections that accelerate your career.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card" data-service="skill-development">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Skill Development Resources</h3>
+                    <p>Curated learning paths to build in-demand technical skills.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card" data-service="growth-marketing">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Marketing as a Service</h3>
+                    <p>Data-driven strategies to scale your digital presence and business.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card" data-service="conversion-optimization">
+                    <div class="service-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Conversion Optimization</h3>
+                    <p>Turn visitors into customers with proven optimization techniques.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="alt-bg">
+        <div class="container">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card" data-blog="ai-career">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI Career Paths">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Emerging AI Career Paths in 2025</h3>
+                        <p>Discover the most promising career opportunities in the rapidly evolving field of artificial intelligence.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card" data-blog="personal-branding">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Personal Branding">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Your Tech Personal Brand</h3>
+                        <p>Learn how to strategically position yourself as an authority in your technical niche.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card" data-blog="remote-work">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Remote Work">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Maximizing Productivity in Remote Tech Teams</h3>
+                        <p>Strategies for effective collaboration and communication in distributed engineering teams.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <h2 class="section-title">About craftedcodejoy</h2>
+                    <p class="about-description">
+                        craftedcodejoy is a premium platform dedicated to empowering technology professionals through cutting-edge career development resources, coaching, and business growth strategies.
+                    </p>
+                    <p class="about-description">
+                        Founded by Clay Brimley, a seasoned developer and architect with over 15 years of experience as an ex-CTO, we're committed to growing world-class engineering leaders through our comprehensive masterclasses and personalized coaching.
+                    </p>
+                    <div class="founder">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Clay Brimley">
+                        <div class="founder-info">
+                            <h3>Clay Brimley</h3>
+                            <p>Founder & CEO</p>
+                            <p>Developer, Architect, Ex-CTO with 15+ years of experience in building and leading engineering teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="alt-bg">
+        <div class="container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <p class="pricing-subtitle">Choose the perfect plan to accelerate your career and business growth</p>
+            
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p class="price">$49<span>/month</span></p>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Access to basic resources</li>
+                        <li><i class="fas fa-check"></i> Career assessment tools</li>
+                        <li><i class="fas fa-check"></i> Resume review</li>
+                        <li><i class="fas fa-check"></i> Community forum access</li>
+                        <li><i class="fas fa-check"></i> Monthly group Q&A session</li>
+                    </ul>
+                    <button class="btn btn-outline">Get Started</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card popular">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p class="price">$99<span>/month</span></p>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> All Starter features</li>
+                        <li><i class="fas fa-check"></i> 1-on-1 coaching session monthly</li>
+                        <li><i class="fas fa-check"></i> Career advancement roadmap</li>
+                        <li><i class="fas fa-check"></i> Priority community support</li>
+                        <li><i class="fas fa-check"></i> Access to premium workshops</li>
+                        <li><i class="fas fa-check"></i> Networking opportunities</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p class="price">$199<span>/month</span></p>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> All Professional features</li>
+                        <li><i class="fas fa-check"></i> Weekly 1-on-1 coaching sessions</li>
+                        <li><i class="fas fa-check"></i> Custom growth strategies</li>
+                        <li><i class="fas fa-check"></i> Executive mentorship</li>
+                        <li><i class="fas fa-check"></i> Team training opportunities</li>
+                        <li><i class="fas fa-check"></i> Exclusive mastermind access</li>
+                    </ul>
+                    <button class="btn btn-outline">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section id="referral">
+        <div class="container">
+            <div class="referral-card">
+                <h2>Have a Referral Code?</h2>
+                <p>Enter your referral code to unlock exclusive membership benefits</p>
+                <div class="referral-form">
+                    <input type="text" id="referral-code" placeholder="Enter your referral code">
+                    <button class="btn btn-primary" id="submit-referral">Submit</button>
+                </div>
+                <p id="referral-error" class="error-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="alt-bg">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Interested Service</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="career-coaching">Career Coaching</option>
+                            <option value="job-search">Job Search Strategies</option>
+                            <option value="personal-branding">Personal Branding</option>
+                            <option value="networking">Networking Strategies</option>
+                            <option value="skill-development">Skill Development</option>
+                            <option value="growth-marketing">Growth Marketing</option>
+                            <option value="conversion-optimization">Conversion Optimization</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter">
+        <div class="container">
+            <div class="newsletter-card">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest insights, tips, and resources delivered straight to your inbox</p>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+                <div class="newsletter-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>Weekly career insights</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-tools"></i>
+                        <p>Exclusive tools & resources</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-bolt"></i>
+                        <p>Early access to events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <a href="#">crafted<span class="gradient-text">code</span>joy</a>
+                    <p>Elevating careers and businesses through technology and strategy.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Career Coaching</a></li>
+                            <li><a href="#services">Job Search Strategies</a></li>
+                            <li><a href="#services">Personal Branding</a></li>
+                            <li><a href="#services">Networking Strategies</a></li>
+                            <li><a href="#services">Skill Development</a></li>
+                            <li><a href="#services">Growth Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> craftedcodejoy. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Membership Area (Hidden by default) -->
+    <section id="membership" class="hidden">
+        <div class="container">
+            <div class="membership-wrapper">
+                <div class="membership-header">
+                    <h2>Welcome to Exclusive Membership!</h2>
+                    <p>You've unlocked access to our premium resources and benefits.</p>
+                </div>
+                <div class="membership-content">
+                    <div class="membership-benefits">
+                        <h3>Your Membership Benefits</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Step-by-step AI Lessons</h4>
+                                    <p>Learn to create AI agents that automate your work through detailed tutorials.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Ready-to-Load Automation Blueprints</h4>
+                                    <p>Upload and set up instantly with our pre-built automation templates.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Discounted Lifetime Rate</h4>
+                                    <p>Enjoy a special rate of $69/mo instead of the regular $129/mo as an early member.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Premium Workshops & Masterclasses</h4>
+                                    <p>Access exclusive training sessions led by industry experts.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Priority Support & Mentorship</h4>
+                                    <p>Get personalized guidance from experienced tech leaders.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="membership-cta">
+                        <h3>Ready to Maximize Your AI Potential?</h3>
+                        <p>Join our community of like-minded professionals leveraging AI to grow their careers and businesses.</p>
+                        <button class="btn btn-primary">Access Member Dashboard</button>
+                        <p class="membership-note">You're accessing craftedcodejoy at the special seed member rate of $69/mo for life!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
