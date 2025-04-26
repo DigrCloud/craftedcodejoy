@@ -1,53 +1,42 @@
 import requests
-import pytest
-import os
+import unittest
 from datetime import datetime
 
-# Get the backend URL from environment variable
-BACKEND_URL = os.environ.get('REACT_APP_BACKEND_URL', 'http://localhost:8001')
-API_URL = f"{BACKEND_URL}/api"
+class CraftedCodeJoyAPITest(unittest.TestCase):
+    def setUp(self):
+        self.base_url = "https://fbc65539-a17d-49cd-a11c-c40dc99a05ca.preview.emergentagent.com/api"
+        self.test_client_name = f"test_client_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-def test_root_endpoint():
-    """Test the root endpoint"""
-    try:
-        response = requests.get(f"{API_URL}/")
-        assert response.status_code == 200
-        assert response.json() == {"message": "Hello World"}
+    def test_1_root_endpoint(self):
+        """Test the root endpoint"""
+        print("\nTesting root endpoint...")
+        response = requests.get(f"{self.base_url}/")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"message": "Hello World"})
         print("✅ Root endpoint test passed")
-    except Exception as e:
-        print(f"❌ Root endpoint test failed: {str(e)}")
-        raise
 
-def test_status_check_flow():
-    """Test the status check creation and retrieval flow"""
-    try:
-        # Test creating a status check
-        client_name = f"test_client_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        create_response = requests.post(
-            f"{API_URL}/status",
-            json={"client_name": client_name}
-        )
-        assert create_response.status_code == 200
-        created_status = create_response.json()
-        assert created_status["client_name"] == client_name
+    def test_2_create_status_check(self):
+        """Test creating a status check"""
+        print("\nTesting status check creation...")
+        data = {"client_name": self.test_client_name}
+        response = requests.post(f"{self.base_url}/status", json=data)
+        self.assertEqual(response.status_code, 200)
+        response_data = response.json()
+        self.assertEqual(response_data["client_name"], self.test_client_name)
+        self.assertIn("id", response_data)
         print("✅ Status check creation test passed")
 
-        # Test getting all status checks
-        get_response = requests.get(f"{API_URL}/status")
-        assert get_response.status_code == 200
-        status_checks = get_response.json()
-        assert isinstance(status_checks, list)
-        assert any(check["client_name"] == client_name for check in status_checks)
-        print("✅ Status check retrieval test passed")
-    except Exception as e:
-        print(f"❌ Status check flow test failed: {str(e)}")
-        raise
+    def test_3_get_status_checks(self):
+        """Test getting status checks"""
+        print("\nTesting get status checks...")
+        response = requests.get(f"{self.base_url}/status")
+        self.assertEqual(response.status_code, 200)
+        status_checks = response.json()
+        self.assertIsInstance(status_checks, list)
+        # Verify our test client exists in the list
+        client_names = [check["client_name"] for check in status_checks]
+        self.assertIn(self.test_client_name, client_names)
+        print("✅ Get status checks test passed")
 
-if __name__ == "__main__":
-    print("\n🔍 Starting backend API tests...")
-    try:
-        test_root_endpoint()
-        test_status_check_flow()
-        print("\n✨ All backend tests passed successfully!")
-    except Exception as e:
-        print(f"\n❌ Tests failed: {str(e)}")
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
