@@ -1,0 +1,84 @@
+/* Dropdown Menu Fix for craftedcodejoy */
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    /* Basic nav structure */
+    nav {
+        position: relative;
+    }
+    
+    /* Style for the nav links container */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--white);
+        width: 250px;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+    
+    /* When menu is active */
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    /* Individual link styling */
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        color: var(--text-color) !important;
+        display: block;
+        padding: 8px 0;
+    }
+    
+    /* Hamburger button active state */
+    .hamburger {
+        z-index: 101;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    /* Contact button in mobile view */
+    .contact-btn {
+        display: none;
+    }
+    
+    /* Show a contact link in the mobile menu instead */
+    .nav-links .mobile-contact-link {
+        margin-top: 15px;
+        text-align: center;
+    }
+    
+    .nav-links .mobile-contact-link a {
+        display: inline-block;
+        padding: 10px 20px;
+        background: var(--gradient);
+        color: var(--white) !important;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+    }
+}
